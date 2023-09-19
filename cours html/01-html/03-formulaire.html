@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="efr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>les formulaires</title>
+</head>
+<body>
+
+    <!-- diffrence get et post : get on envoi donné dans l'url, peut etre partagé ;  post : envoyé sur un serveur  -->
+
+    <form action="https://www.google.fr/search" method="get" target="_blank">
+        <label for="search">Votre recherche:</label>
+        <input type="text" name="q" id="search" placeholder="votre recherche" required autofocus> <!-- lier id et for  -->
+        <input type="submit" value="rechercher quelque chose">
+
+    </form>
+
+    <form action="#">
+        <label type="date" name="birthday">Date de naissance</label>
+        <input type="date" name="birthday" id="birthday" disabled>
+        <br>
+        <label for="color">couleur favorite</label>
+        <input type="color" name="color" id="color">
+        <br>
+        <label for="email">Votre email</label>
+        <input type="email" name="email" id="email"> 
+        <br>
+        <button type="submit">Envoyer</button>
+        <br>
+        <label for="password">Votre mot de passe</label>
+        <input type="password" name="pass" id="pass">
+        <br>
+        <label for="cv">Votre cv</label>
+        <input type="file" name="cv" id="cv" multiple>
+        <br>   
+        <label for="commentaire" >Un commentaire peut-être ?</label>
+        <textarea name="commentaire" id="commentaire"  cols="10" rows="5"></textarea>
+        <button type="submit">Envoyer</button>
+        <br>
+        <fieldset>
+            <legend>Choisi ton language préféré</legend>
+            <input type="radio" name="language" id="html" value="html"  checked>
+            <label for="html">HTML</label>
+            <input type="radio" name="language" id="css" value="css">
+            <label for="css">CSS</label>
+            <input type="radio" name="language" id="js" value="js">
+            <label for="js">JavaScript</label>          
+        </fieldset>
+
+        <fieldset>
+            <legend>Quelles catégories apprécier vous ?</legend>
+            <input type="checkbox" name="aventure" id="aventure" value="av" checked>
+            <label for="aventure">aventure</label>
+            <input type="checkbox" name="romantique" id="romantique" value="ro">
+            <label for="aventure">romantique</label>
+            <input type="checkbox" name="horreur" id="horreur" value="ho" >
+            <label for="aventure">horreur</label>
+        </fieldset>
+
+        <label for="repas">Choisi ton repas :</label>
+        <select name="repas" id="repas" >
+            <option disabled selected="#">Choisi ton repas</option>
+            <option value="pizza">pizzaaa</option>
+            <option value="pasta">pâtes</option>
+            <option value="burger" >hamburger</option>
+        </select>
+        <br>
+        <input type="button" value="HEY">
+
+    </form>
+
+    <div contenteditable="true">ecrit</div>
+
+    <form action="#" method="get">
+        <input type="text" name="regex" placeholder="text" required pattern="^[a-zA-Z]+$">
+        <button>envoyer</button>
+    </form>
+    
+    
+</body>
+</html>
+
+

@@ -1,0 +1,179 @@
+/* La syntaxe css est la suivante :
+ selecteur {propriété:valeur;} */
+ /* Le dernier element lu a la priorité */
+
+
+
+
+ header{
+    background-color: rgba(0, 0, 255, 0.205);  
+ }
+
+main {
+    background-color: aquamarine;   
+}
+
+footer {
+    background-color: rgba(255, 140, 0, 0.24) !important;
+}
+
+/* Enfant directe ou indirecte */
+
+main p {
+    /* On selectionne tous les p se trouvant dans main. On parle d"enfant indirecte. */
+    background-color: lightsalmon;
+}
+
+main > p {
+    /* on selectionne tous les p du site se trouvant dans un main sans autres balises les separants. on parle d'enfant directe */
+    background-color: olive;
+}
+
+/* frere direct ou indirecte */
+
+h3 ~ li {
+    /* selectionne tous les li suivant un h3 */
+    background-color: rgb(72, 87, 73);
+}
+
+li ~ li{
+    /* le premier est exlue car pas de frère antécédant et qu'importe si un p ou autre est entre deux, cela fonctionnera*/
+    background-color: yellowgreen;
+} 
+
+/* pseudo classes */
+/* les pseudo classes sont écrites de la facon suivante ":nom" */
+
+li:hover {
+    /* selectionne les li quand le surseur les survoles */
+    background-color: deeppink;
+}
+
+li:nth-of-type(3){
+    /* selectionne le "n" eme de son type, ici le 3eme li et toujours de son bloc !!! */
+    /* il existe aussi cette pseudo classe en partant de la fin :
+    ":nth-last-of-type()" */
+    background-color: tomato;
+}
+
+li:nth-child(2){
+    /* selectionne le "n"eme enfant peu importe son type. ici on précise qu'il faut que le 2eme soit un li.
+    il existe aussi ":nth-last-child()" */
+    background-color: black;
+    color: white;
+}
+
+h1 a {
+    color: darkorange;
+}
+
+h1 a:focus {
+    color: blueviolet;
+}
+
+h1 a:active {
+    /* selectionne l'élément quand il est cliqué */
+    color: cyan;
+}
+
+h1 a:visited{
+    /* quand un site a deha été visité */
+    color: red;
+}
+
+p span:not(:nth-of-type(2)) {
+    /* :not() permet d'exclure ce qui est entre parenthese. ici on demande tout span dans un p, sauf le second */
+    color: magenta;
+}
+
+*:not(h1, a){
+    /* "*" selectionne toutes les balises.
+    "," entre deux selecteurs permet d'en selectionner plusieurs a la fois.
+    font-size modifie la taille de la police.
+    ici on selectionne tout sauf h1 et a*/
+    font-size: 15px;
+}
+
+/* pseudo éléments */
+
+/* le syntaxe d'un pseudo element est "::nom" */
+
+article p::first-letter{
+    /* selectionne la premiere lettre, ici celle du p dans un article */
+    font-size: 50px;
+}
+
+main > p::first-line {
+
+    /* selectionne la preliere ligne; ici celle d'un p enfant direct d'un main */
+    font-weight: 900;
+}
+
+/*before et after servent a creer des element au debut et a la fin d'une balise.
+ils doivent obligatoiremùent contenir la propriété "content".
+ils ne fonctionnement pas sur les élément auto fermant (ne fonctionne pas sur un input par exemple.) */
+
+h1::before {
+    content: "FAUX!! ->";
+    color: yellow;    
+}
+
+h1::after{
+    content: "<-the cake is a lie";
+    color: yellow;
+    
+}
+
+/* classe, id et attributs */
+
+#menuImportant {
+    /* Pour selectionner un élément par son id, j'utilise # suivi de son nom */
+    font-size: 42px;
+    font-weight: bold;
+    color: red;
+}
+
+.peuImportant{
+    /* pour selectionner un élément par sa classe j'utilise "." suivi de son nom. */
+    font-size: 8px;
+    font-weight: 100;
+    color: grey;
+}
+
+a[target]{
+    /* les "[]" indique que je selectionne un élément par son attribut.
+    ici je selectionne tous les "a "qui ont l'attribut target, peu importe sa valeur */
+    font-style: italic;
+}
+
+a[href*="amazon"]{
+    /* "*=" apres un attribut permet de selectionner tous les éléments qui contiennent la valeur suivante.
+    ici on cherche tous les a dont le href contient le mot "amazon" */
+    font-family: monospace, Helvetica, sans-serif;
+}
+
+a[href$=".fr"]{ 
+    /* "$=" selectuinne tous les éléments dont l'attribut termine par la valeur suivante. ici je cherche tous les "a" dont le href terminer par "fr" */
+    background-color: rgba(0, 0, 255, 0.308);
+}
+
+a[href^="https"]::before{
+    /* "^=" selectionne tous les éléments dont l'attribut termine par la valeur suivante. ici je cherche tous les "a" dont le href commence par "https" et leur ajoute un "before" */
+    content: "\2713";
+}
+
+/* autres */
+
+article p, li:nth-child(2), header p{
+    /* une "," permet de préciser les meme regles pour différents selecteurs */
+    font-family: cursive, monospace, 'Times New Roman', Times, serif;
+}
+
+:where(article, header) p {
+    /* ceci est l'équivalent a :
+    article p, header p{}; */
+    color: darkorchid;
+}
+
+/* priorité : id / classe et pseudo class / element et pseudo element, premier nombre quel qu'il soit sera toujours propriétaire que le suivant */
+

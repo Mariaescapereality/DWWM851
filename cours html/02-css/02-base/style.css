@@ -1,0 +1,94 @@
+/* import d'une police d'écriture : */
+
+@font-face {
+    font-family: "BlakaHollow";
+    src: url("../../ressources/fonts/BlakaHollow-Regular.ttf");
+}
+
+:root {
+font-size: 20px;
+--main-bg-color: #ABCDEF;
+--mainTextColor: #b68f68;
+--divTextSize: 30px;
+}
+
+body{
+    /*La taille du body dépend de son contenu, mais si on lui applique un background-color, celui -ci s'appliquera sur toute la page. */
+    background-color: aquamarine;
+}
+
+.target1{
+    font-family: BlakaHollow, 'Times New Roman', Times, serif;
+    background-color: var(--main-bg-color);
+    color: var(--mainTextColor);
+    font-size: var(--divTextSize);
+    
+}
+.target2 {
+    /*
+    les couleurs peuvent être définies par différenes façons: 
+    - par dés mots clefs, mais ceux ci resternt limiter à quelques couleurs.
+    - par des valeurs hexadecimals, 6 chiffres ou lettres allant de 0 à F. Préceder par un #
+    - par la fonction "rgb()" qui accueil 3 nombres de 0 à 255 separes d'une virgule.
+    - par la fonctionn "hsl()" qui accueil 3 valeurs separes d'une virgule. un degre entre 0 à 360, la saturation en pourcentage, la brillance en pourcentage.*/
+    background-color: #ff9c4d;
+    color:red;
+}
+.target3
+{
+    background-color: rgb(123, 98, 237);
+    color: rgb(320, 50, 60);
+}
+.target4 {
+    /*
+    il est possible d'indiquer un porcentage de transparence à nos couleurs (excepte avec les mots clefs);
+    - pour l'hexadecimal, on ajoutera 2 characters de plus.
+    -pour le rgb on utilisera "rgba" qui prendra une qutrieme valeur entre 0 et 1.
+    - pour hsl on utilisera  "hsla" qui fera de meme que "rgba"
+    */
+    background-color: #FeDCBA98;
+    color: rgba(73, 42, 231, 0.3);
+}
+.target5 {
+    /* la taille de la police ou un element peut se preciser avec tout un tas d unite diffrentes.
+    px, em, rem, cm, vh, vw, vmin, vmax, dvh, dvw, %, pc...
+    l'unite de basela plus souvent representer est le px, le pxel est conseillepour valeurs de petit elements ou vertical on evitera de l utiliser pour la valeur horizontale d un gros element
+    */
+    font-size: 40px;
+}
+.target6
+{
+    /* em et rem sont plus adaptes a la taille de la police que d un element.
+    1em presenter, 1 fois taille de la police du parent.
+    1rem,  1 fois la taille de la police racine*/
+    font-size: 1.5rem;
+}
+.target7 
+{
+    font-size: 1.5rem;
+}
+.target8 {
+    /* vw, vh et leurs derives dependnt de la taille du viewport.
+    ils sont generalement utiliser pour la taille des elements et non de la police comme ici.
+    */
+    font-size: 5vw;
+}
+.target9 {
+font-size: 5vh;
+}
+.target10 {
+    /*prendre rourcentage de l'element de la taille la plus grande du viewport, se largeur ou sa hauteur.
+    vmin est un porcentage de la taille la plus petite.
+    */
+font-size: 5vmax;
+}
+.target1 {
+    /*pourcentage prend un pourcentage de la taille de l'element parent. si je dis que la largeur fait 50% de la largeur de l element parent*/
+    font-size: 50%;
+}
+.target2 {
+    /*
+    clamp() permet d'avoir une taille qui s'adapte  entre un minimum et un maximum.
+    */
+    font-size: clamp(10px, 5vw, 30px);
+}

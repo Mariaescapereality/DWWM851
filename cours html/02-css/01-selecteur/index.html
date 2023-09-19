@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecteur CSS</title>
+    <style>
+        /* On peut placer le css a trois endroits différents, le premier étant la balise style dans le heade de notre page */
+        header{
+            background-color: chartreuse;
+            
+            
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <!-- header>(h1>a>{Super site grandiose !})+p>{Ce site est vraiment super} --> 
+
+   <header>
+    <h1>
+        <a href="https://google.fr/search?q=carbonade" target="_blank">
+            Super site grandiose !
+        </a>
+    </h1>
+    <p>
+        Ce site est vraiment super
+    </p>
+   </header>
+   
+
+  <!-- main>(p>lorem+span*3)+article>p>{Gros article très long} --> 
+  
+  <main>
+    <p>
+        <span>Lorem ipsum dolor</span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus sequi accusantium deleniti <span>accusantium deleniti </span>quam sunt aut ut hic fugit vel ipsa <span>repudiandae</span>repudiandae voluptate amet perferendis distinctio eum, qui sint possimus voluptatibus!
+    </p>
+    <article>
+        <p>
+            Gros article très long
+        </p>
+        
+    </article>
+  </main>
+
+  <!-- footer>(h3>{Gros menu})+ul>li*6>{menu $}  -->
+
+  <footer style="background-color: rgba(43, 116, 226, 0.288);">
+    <h3>Gros menu</h3>
+    <ul>
+        <h3>gros menu test h3 + li</h3>
+        <li id="menuImportant">menu 1</li>
+        <li> <a href="https:www.amazon.fr">Amazon</a> </li>
+        <li class="peuImporte">menu 3</li>
+        <li> <a href="https://www.marquiset.fr">Nolwenn</a> </li>
+        <li class="peuImportant">menu 5</li>
+        <li> <a href="https://fr.wikipedia.org/wiki/amazonie">wikipedia</a> </li>
+    </ul>
+  </footer>
+
+  
+
+</body>
+</html>

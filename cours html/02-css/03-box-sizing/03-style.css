@@ -1,0 +1,124 @@
+*, ::before, ::after
+{
+    /*
+    plusieurs balises HTML ont par defaut, une marge ou un padding.
+    Certains développeurs preferent travailler à partir de 0, sans valeurs par ddefaut.
+    On trouvera donc souvent un "reset" en début de css.
+    */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 
+    par defaut, la largeur et la hauteur d'un élément ne prend en compte que sa "boite de contenu",
+    ce qui peut entrainer des depassements en cas d ajout de bordure.
+    cette propriete ci dessous, indique que la largeur et la hareur prennent compte la bordure
+    */
+}
+header
+{
+    background-color: aqua;
+    /* utiliser image en fond*/
+    background-image: url("../../ressources/images/cat.jpg");
+    /* arreter la pepetition de l'image*/
+    background-repeat: no-repeat;
+    /* indique taille de l'image*/
+    background-size: cover;
+    /*indique la position visible de l'image*/
+    background-position: bottom;
+}
+main
+{
+    background: rgb(167, 145, 187);
+    /* background: rgb(167, 145, 187) center/cover url ("../../ressource/images/cat.jpg")*/
+
+}
+article {
+    /*largeur d'un element*/
+    width: 49%;
+    /* modifier le type d'un element, inline, block, inline-block*/
+    display: inline-block;
+    /* border-color: black;
+    border-style: solid;
+    border-width: 5px; */
+    border: 5px solid black;
+    /* padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px; */
+    padding: 5px 10px;
+
+    margin: 20px auto 20px 5px;
+}
+h1 {
+    font-size: 42px;
+    /* gere l'alignement des elements inline*/
+    text-align: center;
+    /* en css le 0 peut etre omis dans le cas d'un chiffre à vergule : 0.8em = .8em*/
+    padding: .8em .1em;
+    color: antiquewhite;
+}
+p {
+    font-size: 20px;
+}
+p::first-letter
+{
+    font-size: 2em;
+}
+footer 
+{
+    background-color: chartreuse;
+    min-height: 50px;
+/*
+width et height gère la largeur et la hauteur d'un elemnt.
+on peut au besoin utiliser aussi: min-width et min-height qui donne une valeur minimum mais qui peut etre dépassé.
+max-width et max-height qui donne une valeur maximum qui peut etre plus petit
+*/
+}
+li {
+    display: inline-block;
+    background: aqua;
+    /* Permet defenir automatiquement la seconde taille d'un element apres avoir defini la premiere, cela via ratio.
+    1/1 que la hauteur et la largeur doivent etre les meme.
+    16/9 que pour 16px de large, la hauteur en fera 9. 
+    */
+    aspect-ratio: 1/1;
+    /* gère l arrondi des angles, à 50% on obtient un cercle. */
+    border-radius: 50%;
+    padding: 1.2rem 5px;
+    margin-left: 15%;
+}
+div {
+    width: 40vw;
+    max-height: 90vh;
+    /* avec une largeur définie, mettre un margin auto à gauche et à droite va centrer l'element.*/
+    margin: 5px auto;
+}
+img {
+    width: 100%;
+    height: 20vh;
+    /*
+    object-fit et object-position fonctionnement comme background-size et background-position mais adapte à une balise "img"
+    */
+    object-fit: cover;
+    object-position: center;
+    /*par defaut les elements inline, laissent un espace entre l'element suivant et lui meme dissous*/
+    display: block;
+}
+div, article {
+    /* box-shadow and text-shadow ajouter une ombre à une element ou du texte.
+    ills prendront au mions 3 valeurs,
+    -le decalage vers la droite
+    -le decalage vers le bas
+    -la couleur
+    on pourra y ajouter optionnelement
+    - le flou de l ombre
+    - l'etalage de l'ombre
+    on peut ajouter plusieurs ombres a un meme element en les separents par des virgules
+    */
+    /* box-shadow: 5px 5px rgba(0, 0, 0, 0.315)*/
+    /* box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.315) */
+    /* box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.315) */
+    /* box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.315) inset*/
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.822);
+
+}

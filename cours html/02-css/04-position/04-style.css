@@ -1,0 +1,81 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 400vh;
+    
+}
+header {
+    padding: 1rem;
+    background: slategray;
+    color: antiquewhite;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    /*indique la profondeur de l'element,
+    Plus la valeur est élevée, plus l'élément est "proche" de l'ecran*/
+    z-index: 1;
+    background-image: url("../ressorces/images/cat.jpeg");
+    background-repeat: repeat, no-repeat;
+}
+nav, main {
+    margin-top: 50px;
+    display: inline-block;
+    height: 100%;
+    padding: 2rem;
+}
+nav {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    background-image: linear-gradient(90deg, blue 33%, white 33%, white 66%, red 66%);
+}
+nav ul {
+    /*element reste dans la fluxe de la page, mais si on scroll,quand l'element attient la position demande (ici 20px du top du viewport)
+    il commence à suivre le scrolling.
+    il ne pourra cependent daans sortir de son parent*/
+    position: sticky;
+    top: 20px;
+}
+main {
+    width: calc(100% - 205px);
+    /* la position relative, garde l'element dans le flux de la page,
+    et permet de la deplacer par rapport à sa positiond'origine
+    */
+    position: relative;
+    top: 150px;
+    background: radial-gradient(circle, red 20%, white 20%);
+}
+
+main p:first-child
+{
+background-image: linear-gradient(45deg, #ffff08 25%, #000305 25%, #ffff08 50%, #000305 50%, #ffff08 75%, #000305 75%);
+background-size: 56.57px 56.57px;
+color:antiquewhite;
+}
+main p:last-child
+{
+background: conic-gradient (red 6deg, orange 6 deg 18 deg, yellow 18 deg 45 deg, green 45deg 110deg, blue 110deg 200deg, purple 200deg);
+}
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
+    /*
+    la position absolute sort l'element du flux de la page, et permet de le positionner par rapport à son parent positionne le plus proche, ou par defaut, le document
+    */
+}
+img {
+    width: 100%;
+    border-radius: 50%;
+    margin: 5px;
+    float: left;
+    shape-outside: margin-box;
+    /* float retire l'element du flux original pour le replacer ailleurs, utile par example  pour avoir du texte qui s adapte à une forme.*/;
+    /* shape-outside texte around */
+}

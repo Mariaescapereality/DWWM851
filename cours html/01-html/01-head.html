@@ -1,0 +1,88 @@
+ 
+ <!-- <nomDeLaBalise attribut1="Valeur de l'attribut">Contenu de la balise</nomDeLaBalise> -->
+
+ <!DOCTYPE html>
+ <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge"> <!-- peu/presque plus utilisée -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsive -->
+        <title>Mon super site !</title>
+        <!-- Balises infuençant le SEO -->
+        <meta name="author" content="Thierry">
+        <meta name="description" content="Une super page avec les bases du HTML">
+        <meta name="keywords" content="html, head, balises, meta tag"> <!-- mot plus adapté au site -->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+         
+
+    </head>
+
+    <body>
+
+        
+
+        <!-- Block prend toute la largeur / inline juste le contenue -->
+        <!-- Balise sémantique (fermé) : pas de règle ou d'effet, convention : header, nav, main, aside, footer,  -->
+        <!-- Balise avec règle : 
+            - section (Doit contenir un titre); 
+            - article(Doit contenir un titre); 
+            - p (un paragraphe ne peut pas contenir de block); 
+            - ul (Unordered list : contient seulement la balise li qui peut contenir n'importe quelle block); 
+            - ol (Ordered list : même règle que les listes excepte numérotée);
+            - H1 -> h6 : Les titres (h1 très gros - h6 petit)
+            - div : Pour structurer votre code, aucne règle, sémentique ou effet  -->
+        <header id="firstTag"></header>
+        <section>Section - Contient un titre</section>
+        <article>article - Contient un titre</article>
+        <ul>
+            <li>et un</li>
+            <li>et deux</li>
+        </ul>
+        <h5>Comment manger un gateau</h5>
+        <ol>
+            <li>sortir un gateau</li>
+            <li>le mettre dans la bouche</li>
+            <li>Le manger</li>
+        </ol>
+        <div></div>
+
+        <!-- Balise inline - Jmais utilisée pour de la mise en forme, indique aux moteur de recherches, robots, vocals un sens précis -->
+
+        <!-- Liste : <br>; <strong>; <em>;  <i> (em indique c'est important, i est por une citation); <u>;  <abbr> (utilisé souvent avec title); <hr>; <a> (pour remonter, utiliser ../ -> remonter une fois); _blank (mettre dans un nouvel onglet); id (pour créer un ancre); span -->
+
+        <p>
+            <strong>ipsum dolor sit amet consectetur,</strong> adipisicing elit.<br> Doloribus repudiandae <em>odio</em> inventore <i>non</i>. Lorem ipsum dolor sit amet consectetur adipisicing elit. <u>Distinctio saepe</u> exercitationem placeat dolores a obcaecati inventore <abbr title="Hypertext markup language">HTML</abbr> iste eum illum aspernatur asperiores suscipit veritatis et vero modi! Dolore, molestias nesciunt.
+        </p>
+        <hr>
+        <p>
+            <!-- a servent a créer des liens internes au site, externe ou des ancres -->
+            
+            <a href="02-tableau.html">Lorem ipsum dolor</a> sit amet consectetur adipisicing elit. Earum tempore perspiciatis quo <a href="./02-tableau.html">Lorem ipsum dolor</a> illo quaerat fugiat <a href="https://www.google.fr" target="_blank">C'est google</a> explicabo quia soluta, tempora ratione porro ducimus quas laboriosam <a href="#firstTag">click here</a> et tenetur nobis ullam <span class="superSpan1 sp1">sint!</span> Lorem ipsum dolor sit amet consectetur adipisicing elit.<img src="../ressources/images/cat.jpg" alt="Un chat" width="200px" height="200px" loading="lazy" decoding="async"> Molestiae harum mollitia dolor ipsam earum incidunt, odit explicabo sed. Natus a voluptatum dolorum asperiores nisi ad corporis, fugit ratione in sed?
+        </p>
+
+        <!--Cas particuliers -->
+
+        <video width="200px" height="200px" src="" controls loop autoplay muted poster="../ressources/images/cat.jpg"></video>  <!--attention autoplay et mute bloque la lecture -->
+
+        <audio src="" controls loop></audio>
+
+        <video controls>
+            <source src="" type="video/mp4"> <!--essai de lancer la video -->
+            <source src="" type="video/x-wav"> <!--si non, essai de lancer la video -->
+            <source src="" type="video/x-msvideo"> <!--si non, essai de lancer la video -->
+            <p>  Video impossible à lire</p> <!--si non, message d'erreur -->
+        </video>
+
+        <iframe src="../01-html/02-tableau.html" frameborder="0"></iframe>
+
+        <pre>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.   
+Consequuntur fugit sint                       rem quia dignissimos et explicabo odit atque id facilis voluptatum magni, ad ipsam cumque laboriosam nobis quasi doloribus architecto? <!-- prend en compte les espaces etc...-->
+        </pre>
+
+                
+    </body>
+
+ </html>
+
+

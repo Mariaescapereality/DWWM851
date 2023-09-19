@@ -1,0 +1,61 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    display: grid;
+    /* display grid s'applique sur le parent  des elements que l'on souhaite placer*/
+    grid-template-columns: auto 1fr auto;
+    /* grid-template-rows permet d'indique le nombre et la taille ranges de notre grille.
+    Chaque rangé est séparé d'un espace avec en valeur, la hauteur de cette rangée.
+    auto indique que la range prendra juste la hauteur dont elle a besoin.
+    1fr signifie "1 fraction du site", utiliser sans autres unites fr, cela lui offrira tous les espace restant
+    */
+    grid-template-rows: auto 1fr auto;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(5, 15%);
+    /* grid-template-columns nombre et taille des colonnes*/
+    grid-template-rows: 2fr 1fr repeat(2, 120px);
+    justify-content: space-evenly;
+}
+main > div:nth-child(1){
+    background: lightgreen;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row: 3;
+}
+main > div:nth-child(2){
+    background: lightblue;
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+main > div:nth-child(3){
+    background: lightcoral;
+    /* fasion des 4: 
+    row start/ column-start/ row-end/ column-end
+    */
+    grid-area: 1/5/4/6;
+}
+main > div:nth-child(4){
+    background: lightseagreen;
+    grid-row: 3/span 2;
+    /* span nombre de colonne ou de range qu il doit prendre */
+    grid-column: 1/span 2;
+}
+main > div:nth-child(5){
+    background-color: lightgoldenrodyellow;
+    /* attention on peut volontairement ou involontairement avoir nos cases qui se superposent */
+    grid-row: 2 / span 3;
+    grid-column: 2/ span 2;
+}
+/* les element non placer iront se placer la ou il reste de la place.*/
+
+
+/*test git*/
+/*test git 2*/

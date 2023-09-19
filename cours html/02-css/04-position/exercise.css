@@ -1,0 +1,23 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+    .class1, .class2, .class3 {
+        height: 200px;
+        width: 200px;
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        }
+    .class1 {
+    left: 45%;
+    top: 50%;
+}
+    .class2 {
+        right: 45%;
+        top: 50%;
+    }
+    .class3 {
+        left: 50%;
+        top: 45%;
+    }

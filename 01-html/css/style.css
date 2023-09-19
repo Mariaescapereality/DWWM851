@@ -1,0 +1,163 @@
+/*
+La syntaxe CSS est la suivante :
+selecteur{propriete:valeur;}
+*/
+header {
+    background-color: cornflowerblue;
+}
+main
+{
+    background-color: aquamarine;
+}
+footer {
+    background-color: darkgoldenrod !important;
+}
+/* --------- Enfant Direct ou Inderect -----------*/
+main p
+{
+    /*On selectionne tous les p du site se trouvant dans main. On parle d'enfant indirect*/
+    background-color: lightsalmon;
+}
+main > p 
+{
+    /* On select tous les p du site se trouvant dans un main sans autres balises les separant. On parle d'enfant direct*/
+    background-color: olive;
+}
+/* Frere direct ou undirect*/
+li ~ li
+{
+    background-color: yellowgreen;
+}
+h3 + li 
+{
+    /* selectionne tous li juste deriére un h3*/
+    background-color: peachpuff;
+}
+/*pseudo classes*/
+/*les pseudo classes, sont écrites de la façon suivante ":nom"*/
+li:hover 
+{
+    /*selectionne mes li quand le curser les survoles*/
+    background-color: deeppink;
+}
+li:nth-of-type(3)
+{
+    /*Select le "n" ème de son tyoe, ici le 3eme li il existe aussi cette pseudo classe en partant de la fin; ":nth-last-of-type()"*/
+    background-color: tomato;
+}
+li:nth-child(2)
+{
+    /*Selectionne le"n" eme enfant, peu importe son type.Ici on precise qu'il faut que le2eme soit un li. Il existe aussi ":nth-last-child()"*/
+    background-color: black;
+    color: white;
+}
+h1 a 
+{
+color: darkorange;
+}
+h1 a:focus
+{
+    /*selectionne l'element quand il est focus*/
+    color: fuchsia;
+}
+h1 a:article {
+    /*selectionne l'element quand il est clique*/
+    color: cyan;
+}
+h1 a:visited 
+{
+
+/*quand site deja visited*/
+    color:red
+}
+
+p span:not(:nth-of-type(2))
+{
+/* ":not()" permet d'exclure ce qui est entre parenthese. Ici on demande tout span dans un p, sauf le second.*/
+color: magenta;
+}
+
+*:not(h1, a)
+{
+    /*     * select all balises
+
+    */
+    
+ font-size: 20px;
+}
+
+article p::first-letter
+{
+    font-size: 50px;
+}
+
+main > p::first-line 
+{
+    font-weight: 900;
+}
+/* content et ne functionne pas sur elem auto fermant.*/
+h1:before 
+{
+    content: "c'est faux->";
+    color: yellow;
+
+}
+
+h1::after
+{
+    content: "lalala";
+    color:darkgoldenrod;
+}
+/* classes, id et attributs*/
+
+#menuImportant
+{
+    /* pour selectionner un element par son id use # before name*/
+    font-size: 42px;
+    font-weight: bold;
+    color: red;
+}
+.peuImportant
+{
+    /* pour selectionner use point "." before name*/
+    font-size: 8px;
+    font-weight: 100;
+    color: gainsboro;
+}
+
+a[target] {
+    font-style: italic;
+}
+a[href*="amazon"]
+{
+    /* "*="  after attribut permet de selectioner tous les elements contient la valeur suivante.
+    ici je cherche tous les a dont le href contient le mot "amazon"*/
+    font-family: monospace, Helvetica, sans-serif;
+}
+a[href$=".fr"]
+{
+    /* "$=" selectionne tous les elements dont l'attribut termine par la valeur suivante. ici je cherche tous les "a" dont le "href"
+    termine par ".fr"*/
+    background-color: blue;
+}
+a[href^="hhtps"]::before
+{
+    content: "\2712";
+}
+/* autres */
+article p, li:nth-child(2), header p
+{
+    /* une "," permet de preciser les meme regles pour differents selecteurs*/
+    font-family: cursive, monospace, 'Times New Roman', Times, serif;
+}
+:where(article, header)
+{
+    /* ceci est equivalent article à : 
+    article p, header p*/
+    color: darkorchid;
+}
+
+header
+{
+    background-color: darkcyan;
+}

@@ -1,0 +1,90 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*de nos jours, il est preferable un mobile first*/
+body
+{
+    background-color: bisque;
+}
+h1, h2{
+    text-align: center;
+}
+article
+{
+    margin: 1rem, 10px;
+    border: 1px solid grey;
+    padding: .5rem;
+}
+/* pour avoir un site responsive, c'est à dire qui s'adapte à toute taille d'ecran.
+Le premier conseil est autant que possible, prioriser les unites tel que "%", vh, vw... qui adapte elles meme à la taille des acran ou elements.
+le second, est d'utiliser les media queries.
+ces media querles perrmett d appliquer certaines regles, uniquement à certaines conditions, par example:
+- un break point (a partir de 600px, ou en dessous de 900px...
+- un format, paysage
+- la theme utiliser par utilisateur()
+- l'utilisation ()
+
+*/
+@media screen and (min-width: 500px)  {
+    body {
+        background-color: lightgreen;
+    }
+    article{
+        display: inline-block;
+        width: 49%;
+    }
+}
+@media screen and (min-width: 900px)
+{
+    body {
+        background-color: lightblue
+    };
+    article {
+        width: 32%;
+    }
+}
+/*@media  and (max-width: 700px) {}*/
+/*regles specifique a l'impression*/
+@media print {
+    .scroll{display: none;}
+}
+/*regles specifique a l'orientation*/
+/*@media screen (orientation: landscape;) {}
+@media screen (orientation: portrait;){}
+@media (prefers-color-scheme: dark){}
+@media (prefers-color-scheme: light){}*/
+    
+/*
+comptabilites des navigateurs
+le world wide web consortsium (w3c) s'occupe de gerer les convections et la standartisation des technologies utilisees sur les web.
+malgre cela, des differences existent entre les differents navigateurs. ( de moins en moins car beaucoup utiliser le moteur chromium)
+certaines proprietes ou selecteurs peuvent avoir un indicateur prouvant leur fonctionnement sur un moteur unique: 
+- "-webkit-"
+- "-moz-" pour firefox
+prenons l'examples suivant 
+*/
+div.scroll {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    overflow-y: auto;
+    /* modification chez firefox*/
+    scrollbar-color: red;
+    scrollbar-width: thin;
+    /* auto et scroll not so much text to scroll*/
+}
+div.scroll::-web-kit-scrollbar-thumb
+{
+    background-color: pink;
+    width: 8px;
+}
+div.scroll::-webkit-scrollbar-thumb
+{
+background-color: red;
+width: 8px;
+}
+/* d'autant plus sur les nouvelles proprietes, faites attention aux tableaux de compatibilite en bas de page sur MDN/w3schoolou https://caniuse.com/ */
+    
