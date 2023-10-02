@@ -1,0 +1,69 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    /* le display flex permet de rendre des elements plus flexible, adaptable au differentes tailles d'ecrans.
+    ! le display flex est à mettre sur le parent des elements que l'on souhaite deplacer*/
+    display: flex;
+    /* Flex fonctionne selon un axe principal et un axe secondaire. Par defaut l'axe principale est "horizontal" allant de gauche à droite. mais celui ci est modifiable via la propriete "flex-direction".
+    - row(defaut)
+    - row-reverse
+    - column
+    - column-reverse
+    */
+    flex-direction: row;
+    height: 10vh;
+    /*
+    "justify-content" qui permet placer les elements sur l'axe principal.
+    on peut les places au debut, à la fin, ou center sur l'axe. mais plus interesant, on peut les espacer avec:
+    - space-between
+    - space-around
+    - space-evenly
+
+    */
+    justify-content: space-between;
+    /*"flex-wrap" permet d'indiquer que si l element manque de place, il peut creer une nouvelle ligne*/
+    flex-wrap: wrap;
+/*
+"align-items" placer elements sur l axe secondaire
+*/
+align-items: center;
+border: 1px solid black;
+}
+li {
+    width: 40vw;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: brown;
+    list-style: none;
+    text-align: center;
+}
+li:hover {
+    /*
+    à la difference des autres, cette regle ne se place pas sur le parent mais sur un enfant.
+    indique le facteur d'un element
+    */
+    flex-grow: 1;
+}
+section {
+    /*une fusion entre flex-direction et flex-wrap*/
+display: flex;
+flex-flow: column wrap;
+height: 150px;
+gap: 10px;
+/* gap permet de faire un espacement entre les elements. c'est une fusion entre row-gap et column-gap*/
+}
+article {
+    width: 40%;
+    background-color: aquamarine;
+}
+article:nth-of-type(3) {
+    background-color: aqua;
+    /* par defaut, tous les elements ont un ordre de "0".
+    chaque elements ayant le même ordre. apparaitra comme il a été défini dans HTML.
+    Une valeur négative fare deplacer un élément avant les autres. Une valeur positive le deplacer apres les autres*/
+    order: -1;
+}

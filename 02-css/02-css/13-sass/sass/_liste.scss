@@ -1,0 +1,16 @@
+@mixin liste($li...)
+{
+@debug $li;
+@for $i from 0 to length($li) {
+@debug $i, nth($li, $i+1);
+#{nth($li, $i+1)} {
+font-size: 30px + $i*10;
+}
+}
+/*"..." permet d avoir autant de parametr que l on souhaite. ils seront tous range dans variable qui preced*/
+}
+ul
+{
+    background-color: cornflowerblue;
+    @include liste(".trc1",".truc2",".truc3", ".truc4",".truc5")
+}

@@ -1,0 +1,48 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a:hover{
+    background-color: white;
+}
+body
+{
+    background-color: white;
+}
+nav {
+    text-align: right;
+}
+li {
+    
+    margin: 1rem, 10px;
+    border: 1px solid black;
+    padding: .5rem;
+}
+@media screen and (min-width: 500px) {
+    body {
+        background-color: white;
+    }
+    article {
+        display: inline-block;
+        width: 40%;}}
+
+        @media screen and (min-width: 377px)
+        {
+            body {
+                background-color: white
+            };
+            article {
+                width: 32%;
+            }
+        }
+        
+@media screen and (min-width: 1620)  {
+    body {
+        background-color: lightblue
+    };
+    article {
+        width: 32%;
+}
+}

@@ -1,0 +1,119 @@
+@use "liste";
+
+h1 
+{
+    color: red;
+    font-style: italic;
+}
+h2
+{
+    color: gray;
+}
+/*Nesting*/
+/*
+le nesting permet d inclure un selecteur CSS, dans un autre.
+*/
+section
+{
+    background-color: aquamarine;
+    h2 {
+    background-color: brown;
+    color: chartreuse;
+    /*
+    Le selecteur de nidification qui fait reference au parent;
+    */
+    &:hover{
+        scale: 1.5;
+           }
+    }
+}
+/*--Les variables--
+Avant meme que les variables CSS existent, SASS avait ses propres variables. 
+Elles doivent commencer par un $
+
+*/
+$colorMain: violet;
+.scss {
+    background-color: $colorMain;
+}
+/* /*#sourceMapping */
+/*
+extends:
+extends permet de reprendre un morceau de CSS, et de le reutiliser à plusieyrs endroits
+ils commencent par un "%" suivi d'un nom.
+*/
+%flexCenter 
+{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+header {
+    @extend %flexCenter;
+    /*on peut utiliser "@extend" pour recupere le code d une classe*/
+    @extend .scss;
+}
+main ul {
+    @extend %flexCenter
+/*
+mixin
+les mixins look like extends, à la difference qu ils peuvent prendre, des parametres. pour les declares, on utilisera: 
+@mixin unNom(parametrel, parametre2...){contenu de la mixin}
+*/
+}
+
+@mixin absol($top, $l, $trx: -50%, $trx:-50%) 
+{
+position: absolute;
+top: $top;
+left: $l;
+transform: translate($trX, $trY);
+}
+.copy {
+    font-size: 4rem;
+    background-color: mediumorchid;
+    @include absol(90%, 90%)
+}
+.menu {
+font-size: 3rem;
+background-color: dodgerblue;
+@include absol(5%, 5%, $trY: 100%)
+}
+/*fonction
+certaines fonction dispo dans sass , mais on peut aussi creer les notres à la difference d une mixin, elle n'affichera pas d'une mixin, elle n'affichera pas de css, mais 
+*/
+@function compLight($color)
+{
+    /*color complimentaire*/
+    $comp: complement($color);
+    /*lighten color eclairaire of some procentage*/
+    $light: lighten($comp, 5%);
+    /*return value @return*/
+    @return $light;
+}
+.copy 
+{
+    color: compLight(red);
+}
+/*conditions
+
+*/
+@mixin radius($w, $h) {
+width: $w;
+height: $h;
+/* avec sass, nous pouvons conditionner certaines valeurs, par examples ici, nous allons dire, que si la hauteur et la largeur, sont les meme, alors nous allons effectuer une action, "sinon" on en fera une autre*/
+
+@if $w==$h 
+{
+    border-radius: 50%;
+}
+@else {
+    border-radius: 5px;
+}
+}
+.copy {
+    @include radius(5rem, 5rem);
+}
+.menu {
+    @include radius(10rem, 5rem);
+}

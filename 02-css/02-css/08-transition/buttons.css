@@ -1,0 +1,197 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    transform: translate(-50%, -50%);
+
+    /*la propriété transition permet d'indique entre auche chose. une propriété dont la valeur va changer et combien de temps ce changement doit prendre*/
+    transition: left 1s;
+}
+
+li{
+    margin: 1rem 0;
+    display: inline-block;
+}
+
+button{
+    font-size: 3rem;
+    aspect-ratio: 1/1;
+}
+
+input#burger{display: none;}
+input#burger:checked ~ ul{left: 50%;}
+
+/*Bouton1*/
+
+li:nth-child(1) button{
+    background-color: gray;
+    /*Transition est la fusion de tout les propriété de transition
+    trnsition-property permet d'indiquer la ou els propriété qui vont etre modifiés*/
+    transition-property: background-color, transform;
+    /*transition-duration indique la durée de la transition
+    Si on a plusierus propriété, on peut les séparer d'une virgule*/
+    transition-duration: 1s, 2s;
+    /*permet de parametrer un delai avanr le debut de la transition*/
+    transition-delay: 0.3s;
+    /*permet de choisir le rythme qu'adoptera la transition (rapide puis long, très long mais rapide)
+    On peut l'indiquer avec des mots clefs comme "linear, ease-in, ease-out..."
+    mais aussi avec les courbes de bezier*/
+    
+    transition-timing-function: cubic-bezier(.84,.65,.28,.74);
+}
+
+li:nth-child(1) button:hover{
+    border-color: red;
+    background-color: pink;
+    transform: rotateY(720deg);
+    transition-property: border-color, color, background-color;
+    transition-duration: 2s;
+}
+
+/*Add favorite*/
+
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow:
+      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+      transition-property: transform;
+      transition-duration: 1s, 2s;
+      transition-delay: 0.3s;
+  }
+  
+  .styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+    transform: rotateX(360deg);
+
+}
+  
+  .styled:active {
+    box-shadow:
+      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* confirm */
+
+  .joinBtn {
+    box-shadow: 10px 5px 5px #999;
+    width: 10em;
+    height: 5ex;
+    cursor: pointer;
+    background-color: salmon;
+    border: 2px solid firebrick;
+    border-radius: 15px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    transition: transform;
+    transition-duration: 1s, 2s;
+    transition-delay: 0.3;
+  }
+  
+  .joinBtn:hover {
+    background-color: pink;
+  }
+  .joinBtn:active {
+transform: rotateX(360deg);
+  }
+
+
+   /*Subscribe*/
+  .joinBtn1 {
+    width: 10em;
+    height: 5ex;
+    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+    border: none;
+    border-radius: 65px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+
+  .joinBtn1:active {
+    box-shadow: 2px 2px 5px #fc894d;
+    border: 10px solid white;
+  }
+
+  /*Hover*/
+
+  .button {
+    display: flex;
+    border-radius: 50px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+    border-radius: 2px solid white;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .clickme {
+    width: 10em;
+    height: 5ex;
+    background-image: pink;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform;
+    transition-duration: 1s, 2s;
+    transition-delay: 0.3;
+  }
+ 
+  .clickme:active {
+ color: #f34079;
+ border-top: 10px #f34079;
+ border-bottom: 10px #f34079;
+ transform: 1s;
+  }
+
+  
+  

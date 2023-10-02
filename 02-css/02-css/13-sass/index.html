@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS/SCSS</title>
+    <link rel="stylesheet" href="./css/test.css">
+    </head>
+    <body>
+        <header>
+            <h1>Les bases de SASS et SCSS</h1>
+        </header>
+        <main>
+            <ul>
+                <li>pour instaler SASS, on utilisera NPM.
+                    <br>
+                    <code>npm install -g sass</code>
+                    la commande pour complier du sass/scss en css est <br>
+                    <code>sass nomDuFichier.scss</code>
+                    si la commande n'est pas reconnu, tentez de mettre "npx" avant.
+                </li>
+                <li>
+                    pour eviter de rataper la commande à chaque fois on peut utiliser l'option "--watch" pour que le terminal reste en surveillance
+                    <code>sass --watch nomDuFichier.scss nomDuFichier.css</code>
+    
+                </li>
+                <li>
+                    Pour surveiller tout un dossier:
+                    <code>sass --watch nomDuFichierSource/:nomDuDossierCible/</code>
+                </li>
+                <li>
+                    On peut minimiser directement le CSS avec:
+                    <code>sass --watch nomDuDossierSource/::nomDuDossierCible/ --style compressed</code>
+                </li>
+            </ul>
+        <section>
+            <h2>SASS</h2>
+            <p>
+                la difference principale entre Sass et SCSS est la syntaxe <br>
+                En premier SASS fut cree, avec une syntaxe plus raccourci, se rapprochant de celle de Python, sans accolade ou ";"<br>
+                elle se base sur l'indentation.
+            </p>
+            <section class="scss">
+                <h2>SCSS</h2>
+                <p>
+                    Les fonction de sass, plaisant à beaucoup monde mais sa syntaxe en rebutant tout autant. <br>
+                    il fut cree SCSS, qui utilise toute les fonction de SASS mais avec la syntaxe de CSS
+                </p>
+            </section>
+        </section>
+        </main>
+        <div class="test">
+            <div class="copy">&copy;</div>
+            <div class="menu">Menu</div>
+            <ul>
+                <li class="truc1">truc1</li>
+                <li class="truc2">truc2</li>
+                <li class="truc3">truc3</li>
+                <li class="truc4">truc4</li>
+                <li class="truc5">truc5</li>
+            </ul>
+        </div>
+    </body>
+    </html>

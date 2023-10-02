@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: inline-block;
+    }
+    .text {
+    font-size: 5em;
+    letter-spacing: 10px;
+    font-family:monospace;
+    border-right: 5px solid;
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+    typing 2s steps(18),
+    cursor .4s step-end infinite alternate;
+    }
+    
+    @keyframes cursor {
+    50%{ border-color: transparent }
+    }
+    @keyframes typing {
+    from { width: 0 }
+    }
+
+    
+
+div {
+    border-radius: 5px;
+  }
+  body {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('bouquet-142876_640.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+  
+  #header {
+    height: 40px;
+    width: 100%;
+    background-color: none;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  #title {
+    margin-left: 3%;
+  }
+  
+  #footer {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-color: #ffcccc;
+    position: relative;
+  }
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+  .icons a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: pink;
+    margin: 5px;
+    border-radius: 50%;
+  }
+  .icons a i {
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+  }
+  .icons a:hover {
+    background-color: palevioletred;
+    transition: 0.5s;
+  }
+  .icons a:hover i{
+    color: fuchsia;
+    transition: 0.5s;
+  }
+  
+  .left {
+    height: 1000px;
+    width: 45px;
+    background-color: none;
+    float: left;
+    position: fixed;
+  }
+  
+  .right {
+    height: 1000px;
+    width: 45px;
+    background-color: none;
+    float: right;
+    position: inherit;
+  }
+  
+  .stuff {
+    display: inline-block;
+    margin-top: 6px;
+    margin-left: 55px;
+    width: 75%;
+    height: 1000px;
+  }
+  
+  p,
+  li {
+    font-family: 'Cedarville Cursive', cursive;
+    font-weight: 500;
+  }
+  
+  .head {
+    font-size: 20px;
+  }
+  
+  #name {
+    font-family: 'Cedarville Cursive', cursive;
+    float: right;
+    margin-top: 5px;
+    margin-right: 4%;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  .joinBtn1 {
+    box-shadow: 10px 5px 5px #999;
+    width: 8em;
+    padding: 5px;
+    cursor: pointer;
+    background-color: salmon;
+    border: 2px solid firebrick;
+    border-radius: 15px;
+    font-weight: bold;
+    color: black;
+    transition: transform;
+    transition-duration: 1s, 2s;
+    transition-delay: 0.3;
+    text-align: center;
+    
+  }
+  
+  .joinBtn1:hover {
+    background-color: pink;
+    transform: rotateX(360deg);
+  }
+  /*.joinBtn1:active {
+
+  }*/
+  
+    @media screen and (min-width: 500px)  {
+        .left,
+        .right {
+          display: none;
+        }
+        .stuff {
+          width: 100%;
+          margin-left: 10px;
+        }
+    }
+    .html{
+        padding:0;
+        margin: 0;
+      min-height:100%;
+    }
+    .body{
+        background: #111;
+      position:relative;
+      min-height:100%;
+    }
+    .button{
+        width: 50px;
+        height: 50px;
+      top:50%;
+      position: fixed;
+        left: 50%;
+        margin-top: -45px;
+        margin-left: -50px;
+        border-radius: 5px;
+        background: none;
+        cursor: pointer;
+        transition: background 0.5s ease;
+    }
+    .button:hover{
+    color: violet;
+    }
+    .active#heart:before,.active#heart:after{
+        background: red !important;
+    }
+    #heart {
+        width: 100px;
+        height: 90px;
+        transition: background 0.5s ease;
+    }
+    #heart:before,
+    #heart:after {
+        transition: background 0.5s ease;
+        position: absolute;
+        content: "";
+        left: 50px;
+        top: 0;
+        width: 50px;
+        height: 80px;
+        background: dimgrey;
+        border-radius: 50px 50px 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+    }
+    #heart:after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin :100% 100%;
+    }

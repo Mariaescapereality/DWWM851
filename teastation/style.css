@@ -1,0 +1,177 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('image/main-bcg.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-box {
+  width: 90%;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.text-box h1 {
+  font-size: 40px;
+  color: green;
+}
+.text-box p{
+  margin: 10px 0 40px;
+  font-size: 20px;
+  color: none;
+}
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: green;
+  border: 1px solid greenyellow;
+  padding: 12px 34px;
+  font-size: 13px;
+  background: olive;
+  position: relative;
+  cursor: pointer;
+}
+.hero-btn:hover {
+  border: 1px solid yellowgreen;
+  background-color: yellowgreen;
+  transition: 1s;
+}
+@media (max-width: 700px) {
+  text-box h1 {
+    font-size: 20px;
+}
+
+}
+
+.media {
+  border: none;
+  background-color: white;
+  /*min-height: 100vh;*/
+  width:100%;
+  display: flex;
+
+  /*grid-template-columns: 1fr 2fr;
+  grid-template-areas: "img content";
+  margin-bottom: 1em;*/
+}
+.media::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.media .text {
+  padding: 10px;
+  align-self: self-start;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  border: 2px solid green;
+}
+.btngreen {
+  color: white;
+  background-color: green;
+}
+.cards {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.c666 {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 30px;
+}
+.product {
+  font-size: 1.5em;
+  text-align: center;
+}
+.product ~ h2 {
+  font-size: 2em;
+  text-align: center;
+} 
+
+.footer {
+ 
+  text-align: center;
+  padding: 8px;
+  background-color: gray;
+  color: #000;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+} 
+.icons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 50%;
+}
+.icons a i {
+  font-size: 2em;
+  color: black;
+  opacity: 0.9;
+}
+.icons a:hover {
+  background-color: green;
+  transition: 0.5s;
+}
+.icons a:hover i{
+  color: green;
+  transition: 0.5s;
+}
+
+.iconsdrinks {
+  display: grid;
+  grid-template-columns: repeat(4,25%);
+  color: green;
+}
+.cuptea {
+  color: green;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+  align-self: auto;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+justify-content: space-between;
+ } 
+
+  
