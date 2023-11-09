@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post avec Fetch</title>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <!--envoyer fichier enctype="multipart/form-data"-->
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file">
+            <br>
+            <input type="text" name="sub_id" id="sub_id">
+            <input type="submit" value="envoyer">
+        </form>
+        <div class="result"></div>
+    
+
+        <a href="https://github.com/ekotechnology/Zippopotamus-Cloud"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/bec6c51521dcc8148146135149fe06a9cc737577/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+        <br/	>
+        <br/	>
+        <div class="container">
+        <div class="span8">
+        <div class='hero-unit'>
+            <h2>Zippoptamus pour la France</h2>
+            <hr/>
+            <p>Essayez de taper un code postal, par exemple <b>71150</b></p>
+            <p><i style="font-size:12px;">Try typing a postal code, for example <b>71150</b></i></p>
+            <br/>
+            <form action="#" method="post" class="form fancy-form">
+    
+                <fieldset>
+                    <legend>Adresses françaises <i style='font-size:12px;'>(French Address)</i></legend>
+                    <br/>
+                    <div>
+                        <div id="zipbox" class="control-group">
+                            <label for="zip">Code Postal</label>
+                            <input type="text" class='' pattern="[0-9]*" name="zip" id="zip" placeholder="Tapez votre code postal"/>
+                        </div>	
+                    </div>
+                    <div>
+                        <div id="citybox" class="control-group" >
+                            <label for="city">Ville</label>
+                            <input type="text" name="city" id="city" placeholder="D'abord taper votre code postal" />
+                        </div>
+                    </div>
+    
+                    <div>
+                        <a href="http://api.zippopotam.us/static/sample_fr.html" class='btn btn-success btn-large' >Envoi</a>
+                    </div>
+                </fieldset>
+            </form>	
+        </div>
+        </div>
+        </div>
+        <title>Place Searches</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    
+        <main>
+            <!-- ================== -->
+            <!-- Google Map Element -->
+            <section class="google-map">
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2148.5441034736186!2d113.90571038290093!3d22.25793180820957!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340158f577d8e91d%3A0x771695466285a370!2sAsian%20Institute%20of%20Applied%20Buddhism%2C%20Lotus%20Pond%20Temple!5e0!3m2!1sen!2shk!4v1595793486587!5m2!1sen!2shk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </section>
+            <!-- Google Map Element -->
+            <!-- ================== -->
+        </main>
+</body>
+</html>
