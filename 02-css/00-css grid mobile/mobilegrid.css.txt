@@ -1,3 +1,4 @@
+<<<<<<<< HEAD:02-css/00-css grid mobile/mobilegrid.css.txt
 .cards {
     margin: 0 auto;
     max-width: 1000px;
@@ -39,3 +40,46 @@
     font-size: 0.9em;
     margin-right: 8px;
 }
+========
+.cards {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(autofit, minmax(225px, 1fr));
+    gap: 20px;
+    font-family: sans-serif;
+}
+.card {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.card__image {
+    width: 100%;
+    display: block;
+}
+.card__content {
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+    background: #fafafa;
+}
+.card__content > p:first-of-type {
+    margin-top: 0;
+}
+.card__content > p:last-of-type {
+    margin-bottom: 0;
+}
+.card__info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555555;
+    background: #eeeeee;
+    font-size: 0.8em;
+    border-bottom: 2px solid #cccccc;
+}
+.im310 {
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+>>>>>>>> 6d95df47b5d49909ad9ff032b3bc391ca5fb1679:02-css/00-css grid mobile/mobilegrid.css

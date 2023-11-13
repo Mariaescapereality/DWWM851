@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0px;
     list-style: none;
@@ -108,4 +109,116 @@
   
   .arrow-nav button.prev {
     transform: rotate(-180deg);
+=======
+* {
+    margin: 0px;
+    list-style: none;
+    text-decoration: none;
+    padding: 0px;
+    font-size:10px;
+    
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .slide {
+    display: flex;
+  }
+  
+  .slide:hover {
+    will-change: transform;
+  }
+  
+  .slide li {
+    width: 80vw;
+    flex-shrink:0;
+    max-width: 80rem;
+    margin: 0 2rem;
+  
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,.4);
+    opacity: .8;
+    transform: scale(.8);
+    transition: .9s;
+  }
+  
+  .slide-wrapper {
+    overflow: hidden;
+  }
+  
+  .slide li.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  [data-control="slide"] {
+    display: flex;
+    justify-content: center;
+    margin-top:2rem;
+  }
+  
+  [data-control="slide"] li a {
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: #fb5;
+    border-radius: 50%;
+    text-indent: -99.9rem;
+    overflow: hidden;
+    margin: 0.5rem;
+  }
+  
+  [data-control="slide"] li.active a, [data-control="slide"] li a:hover {
+    background: #e54;
+  }
+  
+  .custom-controls {
+    display: flex;
+    justify-content: center;
+    margin-top:4rem;
+    flex-wrap:wrap;
+    margin-bottom:2rem;
+  }
+  
+  .custom-controls li {
+    opacity: .8;
+    transform: scale(.8) ;
+    width: 4rem;
+    height: 4rem;
+    border-radius:50%;
+    overflow: hidden;
+    margin: 0.2rem;
+    box-shadow:0 0.2rem 0.2rem rgba(0,0,0,.5);
+    cursor: pointer;
+    transition: .9s;
+  }
+  
+  .custom-controls li.active {
+    opacity:1;
+    transform: scale(1);
+  }
+  
+  .arrow-nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+  }
+  
+  .arrow-nav button {
+    cursor: pointer;
+    border: none;
+    border-radius: 0.4rem;
+    width: 4rem;
+    height: 4rem;
+    color: white;
+    background: #fb5 url('../img/arrow.svg') center center no-repeat;
+  }
+  
+  .arrow-nav button.prev {
+    transform: rotate(-180deg);
+>>>>>>> 6d95df47b5d49909ad9ff032b3bc391ca5fb1679
   }

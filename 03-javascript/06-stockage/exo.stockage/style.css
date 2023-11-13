@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root,
     :root.light {
     --bg-color: #fff;
@@ -30,3 +31,37 @@
         color: var(--text-color);
         font-family: var(--font-family, "Open Sans", sans-serif);
         }
+=======
+:root,
+    :root.light {
+    --bg-color: #fff;
+    --text-color: #123;
+    }
+    :root.dark {
+    --bg-color: #121212;
+    --text-color: #696d7d;
+    }
+    :root.blue {
+    --bg-color: #05396B;
+    --text-color: #E7F1FE;
+    }
+    :root.pink {
+    --bg-color: #ffcad4;
+    --text-color: #e75480;
+    }
+    select {
+      padding: 0.25rem 0.75rem;
+      font-size: 1.25rem;
+      font-family: inherit;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      border-radius: 0.25rem;
+      }
+      body {
+        margin: 0;
+        background-color: var(--bg-color);
+        background-image: var(--bg-url);
+        color: var(--text-color);
+        font-family: var(--font-family, "Open Sans", sans-serif);
+        }
+>>>>>>> 6d95df47b5d49909ad9ff032b3bc391ca5fb1679

@@ -1,3 +1,4 @@
+<<<<<<<< HEAD:02-css/00-css grid mobile/mobilegrid.html.txt
 <!DOCTYPE html>
 <head>
         <title>Card Grid</title>
@@ -66,3 +67,73 @@
 </div>
     </div>
 </body>
+========
+<!DOCTYPE html>
+<head>
+        <title>Card Grid</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="exogrid.css">
+</head>
+<body>
+    <div class="cards">
+        <div class="card">
+<img src="d:\downloads\pedestrians-1853552_640.jpg" alt="" class="card__image">
+        </div>
+<div class="card__content">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A consectetur placeat necessitatibus! Quae, est ducimus, repudiandae iusto nisi aliquid, nihil obcaecati expedita dignissimos libero maiores ex tempora asperiores facere praesentium.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio perferendis laborum illum expedita cum, eum id nobis culpa sapiente dignissimos ea officiis tempore ratione a debitis aliquam soluta voluptatem dolores.</p>
+</div>
+<div class="card__info">
+    
+    </div>
+</div>
+<div class="card">
+<img src="d:\downloads\pedestrians-1853552_640.jpg" alt="" class="card__image">
+        </div>
+<div class="card__content">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A consectetur placeat necessitatibus! Quae, est ducimus, repudiandae iusto nisi aliquid, nihil obcaecati expedita dignissimos libero maiores ex tempora asperiores facere praesentium.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio perferendis laborum illum expedita cum, eum id nobis culpa sapiente dignissimos ea officiis tempore ratione a debitis aliquam soluta voluptatem dolores.</p>
+</div>
+<div class="card__info">
+
+</div>
+<div class="card">
+<img src="d:\downloads\pedestrians-1853552_640.jpg" alt="" class="card__image">
+        </div>
+<div class="card__content">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A consectetur placeat necessitatibus! Quae, est ducimus, repudiandae iusto nisi aliquid, nihil obcaecati expedita dignissimos libero maiores ex tempora asperiores facere praesentium.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio perferendis laborum illum expedita cum, eum id nobis culpa sapiente dignissimos ea officiis tempore ratione a debitis aliquam soluta voluptatem dolores.</p>
+</div>
+<div class="card__info">
+    <div class="im310">
+    
+    </div>
+</div>
+<div class="card">
+<img src="d:\downloads\pedestrians-1853552_640.jpg" alt="" class="card__image">
+        </div>
+<div class="card__content">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A consectetur placeat necessitatibus! Quae, est ducimus, repudiandae iusto nisi aliquid, nihil obcaecati expedita dignissimos libero maiores ex tempora asperiores facere praesentium.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio perferendis laborum illum expedita cum, eum id nobis culpa sapiente dignissimos ea officiis tempore ratione a debitis aliquam soluta voluptatem dolores.</p>
+</div>
+<div class="card__info">
+    <div class="im310">
+    
+    </div>
+</div>
+<div class="card">
+<img src="d:\downloads\pedestrians-1853552_640.jpg" alt="" class="card__image">
+        </div>
+<div class="card__content">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A consectetur placeat necessitatibus! Quae, est ducimus, repudiandae iusto nisi aliquid, nihil obcaecati expedita dignissimos libero maiores ex tempora asperiores facere praesentium.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio perferendis laborum illum expedita cum, eum id nobis culpa sapiente dignissimos ea officiis tempore ratione a debitis aliquam soluta voluptatem dolores.</p>
+</div>
+<div class="card__info">
+    <div class="im310">
+    
+    </div>
+</div>
+    </div>
+</body>
+>>>>>>>> 6d95df47b5d49909ad9ff032b3bc391ca5fb1679:02-css/00-css grid mobile/mobilegrid.html

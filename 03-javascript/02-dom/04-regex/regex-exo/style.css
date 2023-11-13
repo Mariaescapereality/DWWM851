@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*legend { 
     display: block; 
     padding-left: 2px; 
@@ -35,3 +36,42 @@ fieldset input:not(:last-child)
 
 }*/
 
+=======
+/*legend { 
+    display: block; 
+    padding-left: 2px; 
+    padding-right: 2px; 
+    border: none; 
+} 
+input,
+textarea {
+  margin: 5px 0;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: red;
+  background: red;
+}*/
+fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem;
+
+}
+fieldset input:not(:last-child)
+{
+  margin-bottom: 1rem;
+
+}
+/*input[type=""]
+{
+
+}*/
+
+>>>>>>> 6d95df47b5d49909ad9ff032b3bc391ca5fb1679

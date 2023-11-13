@@ -1,0 +1,155 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,400);
+
+body {
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  background: rgba(236, 240, 241,1.0);
+}
+
+article {
+  width: 640px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.featured-image {
+  width: 100%;
+  height: 480px;
+}
+
+img {
+  width: 100%;
+  height: inherit;
+}
+
+.nth-recipe {
+  padding: 2em;
+  background: rgba(255,255,255,1);
+  border-left: 1px solid rgba(0,0,0,.1);
+  border-right: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  overflow: hidden;
+}
+
+header {
+  display: block;
+  text-align: center;
+}
+
+.recipe-intro {
+  margin: 2em 0;
+  text-align: left;
+}
+
+.recipe-ingredients {
+  width: 100%;
+}
+
+ol {
+  list-style-position: inside;
+  list-style-type: square;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+.nth-part {
+  float: left;
+  width: 50%;
+}
+
+.ingredients-head {
+  text-align: center;
+}
+
+.recipe-direction > p {
+  margin: 1.25em 0;
+}
+
+footer {
+  background: rgba(26, 188, 156,1.0);
+  border-bottom: 5px solid rgba(22, 160, 133,1.0);
+  height: 95px;
+}
+
+.user-pic, .user-info {
+  float: left;
+  line-height: 100px;
+}
+
+.user-pic {
+  width: 100px;
+}
+
+.pro-pic {
+  display: block;
+  margin: 25px auto;
+  height: 50px;
+  width: 50px;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/batPro.jpg') center center no-repeat;
+  border-radius: 50%;
+}
+
+button {
+  margin-left: 100px;
+  height: 50px;
+  width: 200px;
+  background: rgba(52, 152, 219,1.0);
+  border: 0;
+  border-bottom: 2px solid rgba(41, 128, 185,1.0);
+  border-radius: 5px;
+}
+
+
+/*
+  FONT
+*/
+h1 {
+  font-size: 1.5em;
+  color: rgba(51,51,51,1);
+}
+
+p {
+  color: rgba(51,51,51,.7);
+  font-size: 1.05em;
+  line-height: 1.75em;
+}
+
+h2 {
+  margin-bottom: 1em;
+  font-size: 1.1em;
+  color: rgba(51,51,51,1);
+}
+
+ol > li {
+  padding-left: 1em;
+  line-height: 24px;
+  color: rgba(51,51,51,.7);
+}
+
+ul > li {
+  margin-bottom: 2em;
+  padding-left: 2em;
+  line-height: 24px;
+  color: rgba(51,51,51,.7);
+}
+
+.pro-name {
+  font-size: 1.2em;
+  color: rgba(255,255,255,1);
+}
+
+h3 {
+  margin: 1em 0 2em 0;
+  color: rgba(51,51,51,.4);
+}
+
+em {
+  color: rgba(231, 76, 60, .8);
+}
+
+.btn-follow {
+  font-size: 1em;
+  color: rgba(255,255,255,1);
+}
