@@ -1,0 +1,59 @@
+#container{
+    background-color: black;
+    position: relative;
+    width: 100%;
+    padding-top: 50%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+#inner_container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+#imgs_container{
+    width: 100%;
+    height: 100%;
+}
+.img_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    transition: left 0.3s;
+}
+.img_container > img{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+#overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(200, 200, 200, 0.2);
+}
+.overlay_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 10%;
+    height: 20%;
+    border-radius: 50%;
+    font-size: 3vw;
+    font-weight: bold;
+    background-color: #ededed;
+    color: #333;
+    top: 40%;
+}
+#left_button{
+    left: 2.5%;
+}
+#right_button{
+    right: 2.5%;
+}

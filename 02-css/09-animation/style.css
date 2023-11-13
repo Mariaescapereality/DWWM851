@@ -1,0 +1,150 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+.sky {
+    height: 100%;
+    background: linear-gradient(to right, #904e95, #e96445);
+}
+.cloud {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 150px;
+    height: 150px;
+    /*to do animation*/
+    animation-name: cloud;
+    /*duration of animation*/
+    animation-duration: 8s;
+    /*la direction of animation*/
+    animation-direction: normal;
+    /*number of time*/
+    animation-iteration-count: infinite;
+    /*la rythme */
+    animation-timing-function: ease-in-out;
+    /*un delay avant le debut de l'animation*/
+    animation-delay: .3s;
+
+}
+.cloud div 
+{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    background-color: whitesmoke;
+/*la propriete animation est la fusion de toute les proprietes d animation vu au dessous.*/
+    animation: darkCloud 5s linear infinite;
+
+}
+.part1 { top: -35%;}
+.part2 { left: 35%;}
+.part3 { left: -35%;}
+/*pour definir une animation, on utiliser la @rule "@keyframe" suivi d'un identifiant libre de choix*/
+@keyframes cloud {
+from
+{
+    /* on trouvera dans ces keyframes, deux mots clefs "from" et "to" qui represent l etat au debut de l animation et a sa fin. ils peuvent etre remplace par "0%" et "100%". parfois from est meme optionnel.*/
+    right: -30vw;
+    height: 5px;
+    width: 5px;
+}
+/*On peut ajouter autre parametrs*/
+30% {
+    top: 100vh;
+}
+70% {
+    top: 100px;
+}
+80% {
+    height: 50px;
+    width: 50px;
+    right: 50vw;
+}
+to {
+    right: 100vw;
+    height: 250px;
+    width: 250px;
+}
+}
+@keyframes darkCloud {
+    0%{background-color: grey;}
+    50%{background-color: whitesmoke;}
+    100%{background-color: grey;}
+}
+/* scrolling animation 
+attention cette propriete est en cours de devloppdment et donc pas forcement gere par tous les navigateurs. elle permet de non plus avoir une animation dependent une duree mais du scrolling. 0% representera un scrolling à son debut
+100% scrolling à sa fin
+*/
+@keyframes scrollme {
+    from {scale: 0.1;}
+    to{scale: 1 1;}
+}
+@keyframes scrollus {
+    from{
+        left: -20%;
+        
+    }
+    to {
+        left: 100vw;
+        rotate: 1440deg;
+    }
+}
+    @keyframes bounce {
+        from {
+            translate: -100% 0;
+            scale: 1.2 0.8;
+        }
+        10% {scale: 1 1;}
+        50% {translate: -100% -100%;}
+        90% {scale: 1 1;}
+        to {
+            translate: -100% 0;
+            scale: 1.2 0.8;
+        }
+    }
+    body.scroll {
+        overflow: auto;
+        height: auto;
+    }
+    .scroll p {
+margin-bottom: 20vh;
+    }
+    .scroll header {
+        position: fixed;
+        top: 0;
+        height: 50px;
+        width: 100%;
+        background: lightcyan;
+    }
+    .scroll .progress {
+        height: 20px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: green;
+        scale: 0 1;
+        transform-origin: left;
+        animation: scrollme auto linear;
+        /*duration of animation de l animation etant en auto, il va se baser sur sa timeline.
+        timeline */
+        animation-timeline: scroll();
+    }
+    .scroll .ball
+    {
+        translate: -100% 0;
+        position: absolute;
+        bottom: 20px;
+        border-radius: 50%;
+        background-image: radial-gradient(at 30% 30%, rgb(251, 199, 199), red);
+        width: 20px;
+        aspect-ratio: 1/1;
+        animation: scrollus auto linear;
+        animation-timeline: scroll(), auto;
+    }

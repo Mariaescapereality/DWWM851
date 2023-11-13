@@ -1,0 +1,561 @@
+http://127.0.0.1:5500/03-javascript/01-syntax/index.html
+
+
+
+<body>
+<div class="container">
+<p class="text">Typewriter CSS</p>
+</div>
+</body>
+
+
+.container {
+display: inline-block;
+}
+.text {
+font-size: 5em;
+letter-spacing: 10px;
+font-family:monospace;
+border-right: 5px solid;
+width:100%;
+white-space: nowrap;
+overflow: hidden;
+animation:
+typing 2s steps(18),
+cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+50%{ border-color: transparent }
+}
+
+
+---------------
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  background: peachpuff;
+}
+
+.wrapper {
+  position: relative;
+  align-self: flex-end;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  max-height: 550px;
+  overflow-x: hidden;
+  perspective: 1200px;
+}
+
+.girl {
+  position: absolute;
+  bottom: 18%;
+  left: 25%;
+  height: 256px;
+  width: calc(1536px / 6);
+  background-image: url("https://saicharan.dev/assets/girl-sprite.png");
+  transform: scale(0.5);
+  transform-origin: left bottom;
+  animation: 0.675s run steps(6) infinite;
+
+  @keyframes run {
+    to {
+      background-position: -1536px 0;
+    }
+  }
+}
+
+.road {
+  position: absolute;
+  bottom: 0;
+  left: -75%;
+  width: 550%;
+  height: 1500px;
+  background-color: #111;
+  background-image: linear-gradient(rgba(black, 0.75), rgba(black, 0.75)),
+    url("https://dropbox.com/s/2ws3ze3dxa69zmi/asphalt.jpg?raw=1");
+  transform: rotateX(90deg);
+  transform-origin: bottom;
+  animation: 1.2s moveRoad linear infinite;
+
+  &:before { // lines
+    content: "";
+    position: absolute;
+    top: 68%;
+    left: 0;
+    width: 100%;
+    border-top: 40px dashed white;
+  }
+
+  @keyframes moveRoad {
+    to {
+      transform: rotateX(90deg) translate3d(-240px, 0, 0);
+    }
+  }
+}
+<div class="wrapper">
+<div class="road"></div>
+<div class="road"></div>
+</div>
+
+
+Аналоговые круглые часы на HTML5 c логикой на JavaScript
+
+
+
+@media (prefers-color-scheme: light) {
+    :root {
+    --bg-color: #fff;
+    --text-color: #123;
+    }
+    }
+@media (prefers-color-scheme: dark) {
+    :root {
+    --bg-color: #121212;
+    --text-color: #696d7d;
+    }
+    }
+@media (prefers-color-scheme: blue) {
+    :root {
+    --bg-color: #05396B;
+    --text-color: #E7F1FE;
+    }
+    }
+@media (prefers-color-scheme: pink) {
+    :root {
+    --bg-color: #ffcad4;
+    --text-color: #e75480;
+    }
+    }
+@media (prefers-color-scheme: space) {
+    :root {
+    --bg-color: #000;
+    --text-color: #f2bd16;
+    --bg-url: url("https://www.spacejam.com/1996/img/bg_stars.gif");
+    --font-family: 'Press Start 2P', cursive;
+    }
+    }
+@media (prefers-color-scheme: nyan) {
+    :root {
+    --bg-color: #013367;
+    --text-color: #fff;
+    --bg-url: url("https://static.wixstatic.com/media/4cbe8d_f1ed2800a49649848102c68fc5a66e53~mv2.gif");
+    --font-family: 'Comic Neue', cursive;
+    }
+    }
+
+
+/**/
+@media (prefers-color-scheme: light) {
+    :root {
+    --bg-color: #fff;
+    --text-color: #123;
+    }
+    }
+@media (prefers-color-scheme: dark) {
+    :root {
+    --bg-color: #121212;
+    --text-color: #696d7d;
+    }
+    }
+@media (prefers-color-scheme: blue) {
+    :root {
+    --bg-color: #05396B;
+    --text-color: #E7F1FE;
+    }
+    }
+@media (prefers-color-scheme: pink) {
+    :root {
+    --bg-color: #ffcad4;
+    --text-color: #e75480;
+    }
+    }
+@media (prefers-color-scheme: space) {
+    :root {
+    --bg-color: #000;
+    --text-color: #f2bd16;
+    --bg-url: url("https://www.spacejam.com/1996/img/bg_stars.gif");
+    --font-family: 'Press Start 2P', cursive;
+    }
+    }
+@media (prefers-color-scheme: nyan) {
+    :root {
+    --bg-color: #013367;
+    --text-color: #fff;
+    --bg-url: url("https://static.wixstatic.com/media/4cbe8d_f1ed2800a49649848102c68fc5a66e53~mv2.gif");
+    --font-family: 'Comic Neue', cursive;
+    }
+    }
+/*
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #button {
+    display: block;
+    margin: 100px auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }*/
+.js .language-picker__form { 
+    display: none;
+  /*if JavaScript is enabled, hide the default form element*/
+ 
+}
+
+.language-picker__dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 200px;
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-xxs) 0;
+  border-radius: 0.25em;
+  z-index: var(--zindex-popover);
+  
+  /*hide the language list by default*/
+  visibility: hidden;
+  opacity: 0;
+  transition: .2s ease-out;
+}
+
+.language-picker__button[aria-expanded="true"] + .language-picker__dropdown { 
+  /*show the language list when the aria-expanded attribute of the button element is true*/
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(4px);
+}
+
+<div class="language-picker__dropdown" aria-describedby="language-picker-description" id="language-picker-dropdown">
+            <p class="sr-only" id="language-picker-description">Select your language</p>
+          
+            <ul class="language-picker__list" role="listbox">
+              <li>
+                <a lang="de" hreflang="de" href="#" role="option" data-value="deutsch" class="language-picker__item language-picker__flag language-picker__flag--deutsch">Deutsch</a>
+              </li>
+          
+              <li>
+                <a lang="en" hreflang="en" href="#" aria-selected="true" role="option" data-value="english" class="language-picker__item language-picker__flag language-picker__flag--english">English</a>
+              </li>
+            </ul>
+          </div>
+
+.theme-a {
+  background: #dca;
+  color: #731;
+}
+@media (prefers-color-scheme: dark) {
+  .theme-a.adaptive {
+    background: #753;
+    color: #dcb;
+    outline: 5px dashed #000;
+  }
+}
+
+https://codyhouse.co/blog/post/store-theme-color-preferences-with-localstorage
+
+
+let my_json = {"members": [{
+            "name": "Molecule Man",
+            "age": 29,
+            "secretIdentity": "Dan Jukes",
+            "powers": [
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+            ]
+        },
+        {
+            "name": "Madame Uppercut",
+            "age": 39,
+            "secretIdentity": "Jane Wilson",
+            "powers": [
+                "Million tonne punch",
+                "Damage resistance",
+                "Superhuman reflexes"
+            ]
+        },
+        {
+            "name": "Eternal Flame",
+            "age": 1000000,
+            "secretIdentity": "Unknown",
+            "powers": [
+                "Immortality",
+                "Heat Immunity",
+                "Inferno",
+                "Teleportation",
+                "Interdimensional travel"
+            ]
+        }
+    ]
+};
+ 
+let result = JSON.stringify(my_json, null, 2);
+document.getElementById('myDiv').innerHTML = `&lt;pre&gt;${result}&lt;/pre&gt;`;
+-------------------------------------------------------------------
+https://fossheim.io/writing/posts/css-polaroid-camera/
+------------------------------------------------------------------------------------------------------------------------------------
+"use strict";
+// J'importe mes objets.
+import P from "./Paint-v2.js";
+import G from "./JustePrix.js";
+import S from "./Slider-v2.js";
+// je crée mes objets
+const paint = P.create();
+const justePrix = G.create();
+const slider = S.create(["/ressources/images/sea.jpg", "/ressources/images/lava.jpg"], true);
+// Exemple de fin
+const slider2 = S.create(["/ressources/images/sea.jpg", "/ressources/images/lava.jpg"]);
+
+const select = document.querySelector('select#appli');
+const appli = document.querySelector('div.appli');
+// J'ajoute mon évènement et j'appelle une première fois ma fonction
+select.addEventListener("input", selectAppli)
+selectAppli.bind(select)();
+
+/**
+ * Affiche le projet selectionné dans le bouton select.
+ */
+function selectAppli()
+{
+    appli.firstChild?.remove();
+    switch(this.value)
+    {
+        case "slider":
+            appli.append(slider);
+            document.body.append(slider2);
+            break;
+        case "justePrix":
+            appli.append(justePrix);
+            break;
+        case "paint":
+            appli.append(paint);
+            P.resize();
+            break;
+    }
+}
+/* 
+    On remarquera que si on tente d'ajouter deux carousels
+    ils rentreront en conflit.
+    C'est le même objet que l'on utilise, il nous en faudrait
+    un nouveau totalement à part pour éviter cela.
+    C'est ce que va nous permettre le cours suivant.
+*/
+-----------------------------------------------------
+"use strict";
+/**
+ * Jeu de juste prix choisissant un nombre aléatoire
+ * puis laisse l'utilisateur deviner ce nombre en indiquant
+ * si la cible est plus grande ou plus petite.
+ */
+const Game = {
+    /** input pour les réponses de l'utilisateur */
+    input: document.createElement("input"),
+    /** button pour valider la réponse de l'utilisateur */
+    btn: document.createElement("button"),
+    /** p contenant les messages du jeu */
+    p: document.createElement("p"),
+    /**
+     * Crée le jeu et le retourne sous forme de div
+     * @returns {HTMLDivElement} div contenant le jeu
+     */
+    create(){
+        this.input.setAttribute("type","number");
+        this.btn.textContent = "Tenter";
+        this.p.textContent = "Choisi un nombre entre 0 et 100";
+        
+        const div = document.createElement("div");
+        div.style.display = "flex";
+        div.style.flexDirection = "column";
+        div.style.alignItems = "center";
+        div.append(this.p, this.input, this.btn);
+
+        this.btn.addEventListener("click", this.check.bind(this));
+        this.start();
+        return div;
+    },
+    /**
+     * Choisi un nombre aléatoire
+     */
+    start(){
+        this.target = Math.floor(Math.random()*100);
+        this.input.focus();
+    },
+    /**
+     * Vérifie la réponse de l'utilisateur.
+     */
+    check(){
+        if(this.input.value <this.target){
+            this.p.textContent = "C'est plus grand !";
+        }else if(this.input.value > this.target){
+            this.p.textContent = "C'est plus petit !";
+        }else{
+            this.p.textContent= "Félicitation tu as gagné !";
+            this.btn.disabled = true;
+        }
+        this.input.value = "";
+        this.input.focus();
+    }
+}
+export default Game;
+------------------------------------
+https://github.com/thecodingloft/infinite-slider/blob/main/infiniteSlider.js
+-----------------------------------------------------------------------------
+const ed = new EasyDom(); 
+// Je crée une div avec 3 classes, un id et du html.
+const div = ed.tag("div", {
+    class: "truc bidule machin", 
+    id: "chaussette", 
+    html: "test"
+    });
+// Je récupère un élément html
+const span = ed.select("span#specialSpan");
+// Je récupère une collection d'élément html.
+const spans = ed.select("span");
+// J'ajoute un évènement sur une collection d'élément html
+ed.event(spans, "click", (e)=>console.log("collection"));
+// J'ajoute un évènement sur un seul élément html.
+ed.event(span, "click", (e)=>console.log("unique"));
+-----------------------------------------------------------
+modal
+
+<button class="trigger">Click the modal!</button>
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-button">×</span>
+        <h1>Hello, I am a modal!</h1>
+    </div>
+</div>
+________________________________________
+.trigger{
+      text-align: center;
+    padding: 7px 13px;
+    background: #3e3e3e;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: cursive;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.close-button:hover {
+    background-color: darkgray;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+___________________________________________
+var modal = document.querySelector(".modal");
+var trigger = document.querySelector(".trigger");
+var closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+
+end of modal
+----------------
+<p>6. Cozy pyjama.</p>
+                        <p>7. Cookies.</p>
+                        <p>8. Chocolate.</p>
+                        <p>9. Funny cup.</p>
+                        <p>10. Thermos.</p>
+----------------------------------------------------------------
+Hot chocolate 🍫☕
+Make the hot chocolate that is served in cafe of Paris. Thick hot chocolate in a small cup.
+Ingredients:
+70 g dark chocolate (70% cocoa)
+160 ml milk
+1 tbsp.  l.  brown sugar
+1. Break the chocolate into small pieces.
+2. Pour the milk into a saucepan.  Heat over low heat.  When the milk is hot, add the chocolate and mix with kitchen whisk.  Cook until the chocolate is completely dissolved.
+3. Add sugar, bring milk to a near boil (don't boil!) And pour into warmed cups.
+Top with your favorite hot chocolate toppings like whipped cream, candy canes, marshmellows, cinnamon or more chocolate 🙂
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

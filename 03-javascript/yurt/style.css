@@ -1,0 +1,18 @@
+*, ::before, ::after 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+};
+body {
+    background: #353535;
+  };
+  .trapeze {
+    .trapeze{
+        width:1px;
+        height:100px;
+        border:1px solid #069;
+        border-color:transparent transparent transparent #069;
+        border-width:100px;
+    }
+   };
