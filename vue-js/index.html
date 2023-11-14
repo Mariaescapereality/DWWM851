@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="style.css">
+           <title>Document</title>
+        </head>
+              <body>
+                <div id="app">
+                    <section class="todoapp">
+                        <header class="header">
+                            <h1>VueJS Todo App</h1>
+                            <input class="new-todo" placeholder="Enter Todo" autofocus v-model="newTodo" v-on:keyup.enter="addTodo" v-on:reloadlist="getList()" :editItem="editItem">
+                        </header>
+                        <section class="main">
+                            <input id="toggle-all" class="toggle-all" type="checkbox" :items="items" v-on:reloadlist="getList()" @custom-click="edit">
+                            <label for="toggle-all">Mark all as complete</label>
+                            <ul class="todo-list">
+                                <li v-for="todo in todos" :class="[{editing: todo == editedTodo}, todo.todoCompletionState]" :items="items" v-on:reloadlist="getList()" @custom-click="edit">
+                                    <div class="view">
+                                        <input class="toggle" type="checkbox" v-on:click="toggleTodoCompletionState(todo)" v-model="todo.todoCompletionToggleButtonState">
+                                        <label @dblclick="editTodo(todo)">{{todo.text}}</label>
+                                        <button class="destroy" v-on:click="removeTodo(todo)"></button>
+                                    </div>
+                                    <input class="edit" @blur="updateTodo(todo)" @keyup.enter="updateTodo(todo)" v-model="editedTodoText">
+                                </li>
+                            </ul>
+                        </section>
+                        
+                        <footer class="footer" v-show="todos.length">
+                            
+                            <span class="todo-count"><strong>{{ itemsLeft }}</strong> item left</span>
+                            <ul class="filters">
+                                <li>
+                                    <a :class="allButton" href="#" v-on:click="showAll">All</a>
+                                </li>
+                                <li>
+                                    <a href="#" :class="activeButton" v-on:click="showActive">Active</a>
+                                </li>
+                                <li>
+                                    <a href="#" :class="completedButton" v-on:click="showCompleted">Completed</a>
+                                </li>
+                            </ul>
+                            
+                            <button class="clear-completed" v-on:click="clearCompletedTodos">Clear completed</button>
+                        </footer>
+                    </section>
+                    <!--{{ titre }} <.toUpperCase()-->
+                    <!--<br>-->
+                   
+                    <!--liason attribut-->
+                    <!--<img src="{{ image }}" alt="image">--> <!--not show-->
+
+                    <!--
+                    <img v-bind:src="image" alt="">-->
+
+                    <!--
+                    <img :src="image" alt="">-->
+
+                    <!--le rendu conditonnel-->
+                    <!--<p v-if="inStock>=3">inStock {{ inStock}}</p>-->
+                    <!--<p v-else="inStock<3">Rupture inStock {{ inStock}}</p>
+                     <p v-show="inStock">En Stock</p>-->
+
+                    <!--suivre un model
+                    <input type="text" v-model="model" class="list">{{ model }}-->
+                    <!--logique conditionnel chainée
+                    <p v-if="inventaire > 10">en Stock {{ inventaire}}</p>
+                    <p v-else-if="inventaire <= 10 && inventaire >2">presque en Rupture {{ inventaire}}</p>
+                    <p v-else>en Rupture {{ inventaire}}</p>-->
+
+                    <!--rendu liste
+                    <ul>
+                        <li v-for="detail in details">{{detail}}</li>
+                    </ul>-->
+                   
+                    <!--une variante de rendu de liste
+                    <ol>
+                        <li v-for="variant in variants" ::key="variant.id">{{ variant.color}}</li>
+                    </ol>-->
+                    <!--Gestion des evenements
+                    <div class="cart">Panier({{cart}})</div>-->
+                    <!--<button class="button" v-on:click="Ajouter">Ajouter au panier</button>-->
+                    <!--<button class="button" @click="Ajouter">Ajouter au panier</button>--><!--remplace v-on: by @
+                    <button v-if="cart > 0" class="button" @click="Supprimer">Supprimer au panier</button>
+                @mouseover="updateImage(variant2.image)"
+                -->
+
+                    <!--<div v-for="variant2 in variant2" :key="variant2.id" @mouseover="updateImage(variant2.image)">{{ variant2.color }}</div>-->
+
+
+                </div>
+            
+            
+                <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+                <script>
+                    const STORAGE_KEY = 'vue-to-do-app-storage';
+                    const app = Vue.createApp({
+                        data(){
+                            return{
+                                /*titre : "Bonjour à vous",
+                                image : "./img/product-1.jpeg",
+                                image2: '',
+                                inStock: false,
+                                model: "",
+                                inventaire: 1,
+                                details: ['60% cotton', '30% laine', '10% polyester'],
+                                variants: [
+                                    { id:2234, color:'Blue' },
+                                    { id:2235, color:'Red' },
+                                    { id:2236, color:'White' },
+                                ],
+                                cart: 0,
+                                variant2: [
+                                    {id:1012, color:'bleu', image:'./img/autumn-8026374_1920.jpg'},
+                                    {id:1013, color:'rouge', image:'./img/eiffel-tower-975004_640.jpg'}
+                                ]*/
+                                titre: "Vue JS ToDo List",
+                                newTodo: "",
+                                editedTodo: null,
+                                editedTodoText: null,
+                                itemsLeft: null,
+                                allButton: "selected",
+                                activeButton: null,
+                                completedButton: null,
+                                todos: []
+
+                            }
+                        },
+                             created() {
+                             this.todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+                             this.itemsLeft = this.todos.length;
+                        },
+                        function () {
+                             editItem: null
+                        },
+                        methods: {
+                            /*Ajouter(){
+                                this.cart += 1
+                            },
+                            Supprimer(){
+                                if(this.cart == 0)
+                                {
+                                    this.cart
+                                }else{
+                                this.cart -=1
+                                }
+                            },
+                            updateImage(variantImage){
+                                this.image = variantImage
+                            }*/
+                            addTodo() {
+                            if (this.newTodo != "") {
+                            this.todos.push({ id: this.todos.length, todoCompletionToggleButtonState: "", todoCompletionState: "incomplete", text: this.newTodo });
+                            localStorage.setItem(STORAGE_KEY, JSON.stringify(this.todos));
+                            this.newTodo = "";
+                            this.itemsLeft = this.todos.length;
+                               } else {
+                                 alert("Please enter todo text!");
+                                       }
+                            },
+                            removeTodo(todo) {
+                                  this.todos.splice(this.todos.indexOf(todo), 1);
+                                  localStorage.setItem(STORAGE_KEY, JSON.stringify(this.todos));
+                                  this.itemsLeft = this.todos.length;
+                            },
+                            edit(item) {
+                                  this.editItem = this.items.find(i => i.name === item);
+                            },
+                            clearCompletedTodos() {
+                                  this.todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+                                  this.todos = this.todos.filter(function(item) {
+                                  return item.todoCompletionState.includes("incomplete");
+                            });
+
+                            localStorage.setItem(STORAGE_KEY, JSON.stringify(this.todos));
+
+                            this.allButton = "selected";
+                            this.activeButton = null;
+                            this.completedButton = null;
+
+                            this.itemsLeft = this.todos.length;
+                           },
+                           editTodo(todo) {
+                                   if (todo.todoCompletionState == "completed") {
+                                      alert("This todo has been completed and cannot be edited!")
+                                      } else {
+                                          this.editedTodo = todo;
+                                          this.editedTodoText = todo.text;
+                                             }
+                            },
+                            updateTodo(todo) {
+                           if (!this.editedTodo) {
+                           return;
+                           }
+
+                             this.editedTodo = null;
+                             todo.text = this.editedTodoText.trim();
+                               if (!todo.text) {
+                                this.removeTodo(todo);
+                                localStorage.setItem(STORAGE_KEY, JSON.stringify(this.todos));
+                               }
+                              },
+                             toggleTodoCompletionState(todo) {
+                             if (todo.todoCompletionToggleButtonState === "" || todo.todoCompletionToggleButtonState === false) {
+                             todo.todoCompletionToggleButtonState = "checked";
+                             todo.todoCompletionState = "completed";
+                              } else if (todo.todoCompletionToggleButtonState === "checked" || todo.todoCompletionToggleButtonState === true) {
+                                         todo.todoCompletionToggleButtonState = "";
+                                         todo.todoCompletionState = "incomplete";
+                                }
+                                     localStorage.setItem(STORAGE_KEY, JSON.stringify(this.todos));
+                                     },
+                               showActive() {
+                                           this.todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
+                                           if (this.todos.filter(function(item) { return item.todoCompletionState.includes("incomplete") }).length) {
+                                               this.todos = this.todos.filter(function(item) {
+                                               return item.todoCompletionState.includes("incomplete");
+                                 });
+
+                                        this.allButton = null;
+                                        this.activeButton = "selected";
+                                        this.completedButton = null;
+                                          } else {
+                                            alert("No active todos found!");
+                                          }
+                                        },
+                                     showCompleted() {
+                                      this.todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
+                                      if (this.todos.filter(function(item) { return item.todoCompletionState.includes("completed") }).length) {
+                                                this.todos = this.todos.filter(function(item) {
+                                                return item.todoCompletionState.includes("completed");
+                                     });
+                                             this.allButton = null;
+                                             this.activeButton = null;
+                                             this.completedButton = "selected";
+                                              } else {
+                                               alert("No completed todos found!");
+                                               }
+                                              },
+                                                showAll() {
+                                                     this.todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
+                                                     this.allButton = "selected";
+                                                     this.activeButton = null;
+                                                     this.completedButton = null;
+                                                 }
+
+                        }
+                    });
+                    app.mount('#app')       
+            
+                </script>
+              </body>
+</html> 
