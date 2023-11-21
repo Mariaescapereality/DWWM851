@@ -87,6 +87,36 @@ p6.style.color = "brown"
 
 
 
+//modal stuff
+/*
+const modal = document.createElement('div');
+let width = div.width = window.innerWidth;
+let height = div.height = window.innerHeight;
+document.createAttribute(".modal")
+document.body.append(modal);
+
+document.createAttribute(".modal")
+
+const b12 = document.querySelector(".b12");
+
+const clbtn = document.createElement('div');
+clbtn.textContent = "X close";
+document.body.append(clbtn);
+
+function toggleModal(){
+    modal.classList.toggle("show-modal");
+}
+function windowOnClick(event){
+    if(event.target === modal){
+        toggleModal();
+    }
+}
+b12.addEventListener("click", toggleModal);
+clbtn.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);*/
+
+
+
 
 
 
