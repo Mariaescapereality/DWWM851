@@ -1,0 +1,10 @@
+function getAgeDifference($yearOne, $yearTwo)
+{
+    $difference = abs($yearOne - $yearTwo);
+    return "The age difference is {$difference}";
+}
+
+function getFormattedBirthday($day, $month, $year)
+{
+    return sprintf('%02d-%02d-%d', $day, $month, $year);
+}
