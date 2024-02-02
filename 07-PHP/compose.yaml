@@ -1,0 +1,43 @@
+services:
+  web:
+    build: . #build va partir de l'image du dockerfile
+    container_name: serverApache
+    restart: always
+    ports:
+      - "8082:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - SUPER_ENVIRONEMENT_VARIABLE=Mon Super Site
+    depends_on:
+      - mysql #depend du nom donné juste en dessous
+  mysql:
+    image: mariadb # part d'une image prédéfinie
+    container_name: monSuperServerMariadb
+    restart: always
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mysql.sql:/docker-entrypoint-initdb.d/mysql.sql #va etre automatiquement chargé lors du montage de l'image
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: serverPHPMyAdmin
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - "8081:80"
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mysql
+
+      #    docker compose up
+      #    ctrl+c pour arreter le programme
+      #    docker compose stop
+      #    docker compose rm
+
+      #    docker compose -p cours-docker up -d
+    #cependant si le nom a changer il faut faire : docker compose -p cours-docker stop
+    # ou alors docker compose -p cours-docker down
