@@ -1,0 +1,31 @@
+<html>
+<head> 
+  <meta charset="utf-8">
+  <title>Pouvez-vous deviner le numero?</title>
+  <link rel="stylesheet" type="text/css" href="style.css"> 
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="header">
+    <h1>Pouvez-vous deviner le numero?</h1>
+  </div>
+  <div class="main-bg">
+    <div class="main">
+    <div class="guess">
+    <h4>Mon numéro est compris entre 1 et 100. Vous avez 7 tentatives de deviner. Réussirez-vous??</h4>
+    <form>
+      <input type="text" name="guess-number" placeholder="Guess your number!" id="guess-field">
+    <input type="submit" value="Guess" class="btn">
+  </form>
+</div>
+<div class="buttons">
+  <button type="button" class="btn reset">Rejouer</button>
+  <button type="button" class="btn hint">Solution</button>
+</div>
+<div class="message">
+<h4><span id="numGuesses"></span> Reste tentatives</h4>
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
