@@ -1,0 +1,43 @@
+symfony--
+
+1-> install composer and xampp (with or without separatly php)
+To see if all is okay : symfony check:requirements in CMD
+
+2-> to install the project : shift+right-click on the fold and open powershell/CMD
+-> execute the command on docs looks like :
+	 symfony new my_project_directory --version="7.0.*" --webapp
+
+3-> open the fold inside VScode, open terminal and execute : 
+	symfony serve:start
+and check if the main page "symfony 7" appear
+
+3.5-> copy the .env and create the .env.dev.local, copy-pasty all and take off the comments of the line "# mysql......mariadb", change the "changeMe" to root and "app" to the name of the database
+
+4->Create a first page :
+
+-> Create the HomeController with the command (it will create the controller And the view in the template
+	symfony console make:controller
+
+5 ->Create the database with the command :
+	symfony console doctrine:create:database
+The name of the database is in env.dev.local
+
+6 -> create a new entities (sql)
+-> Create the entities Class with the command (it will create the entities class and their tables )
+	symfony console make:entity
+follow the guide : ClassEntity and add the table (ingredient, string,...)
+
+7-> if the database have a createdAt, updateAt (in fact, all belong to a data_immutable), create a __contruct for calling them automatically : 
+	public function __construct(){
+        $this->createdAt = new \DateTimeImmutable();
+    }
+
+8-> when all is okay for you : you must to migrate and do the migration
+migrate	:	symfony console make:migration
+migration :	symfony console doctrine:migrations:migrate (d:m:m)
+
+	
+
+
+
+symfony console make:migration
