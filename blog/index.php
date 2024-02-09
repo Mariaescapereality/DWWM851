@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__ . '/src/helpers.php';
+
+checkGuest();
+?>
 <!DOCTYPE html>
 <html lang="fr">
         <head>
